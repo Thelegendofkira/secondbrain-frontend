@@ -7,10 +7,6 @@ interface CreateContentModelProps {
     isOpen: boolean,
     onClose: () => void
 }
-const enumobj = {
-    youtube: "youtube",
-    twitter: "twitter"
-}
 
 export default function CreateContentModel({ isOpen, onClose }: CreateContentModelProps) {
     const linkref = useRef<HTMLInputElement>(null);
