@@ -15,7 +15,7 @@ export default function Signup() {
                 username: nameRef.current?.value,
                 password: passwordRef.current?.value
             });
-            navigate("/signin");
+            navigate("/");
             toast.success("Signup successful");
         } catch (error) {
             toast.error("Signup failed");
@@ -24,11 +24,12 @@ export default function Signup() {
     }
     return (
         <div className="w-screen h-screen fixed top-0 left-0 flex items-center justify-center">
-            <div className="w-[400px] h-[250px] relative  bg-grey-200 rounded-md flex flex-col items-center justify-center space-y-4 border border-gray-300 shadow-lg rounded-md">
+            <div className="w-[400px] h-[300px] relative  bg-grey-200 rounded-md flex flex-col items-center justify-center space-y-4 border border-gray-300 shadow-lg rounded-md">
                 <h1 className="text-2xl ">Signup</h1>
                 <input ref={nameRef} placeholder="Name" className="border border-gray-300 rounded-md p-2" />
                 <input ref={passwordRef} placeholder="Password" className="border border-gray-300 rounded-md p-2" />
                 <button onClick={signup} className="bg-purple-600 text-white rounded-md p-2 cursor-pointer hover:bg-purple-700" >Signup</button>
+                <p className="p-1 text-sm text-red-500"> username and password min 8 and max 12 and one uppercase and  one special character</p>
             </div>
         </div>
     )
