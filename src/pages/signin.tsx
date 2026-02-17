@@ -32,8 +32,12 @@ export default function Signin() {
                 <h1 className="text-2xl ">Signin</h1>
                 <input ref={nameRef} placeholder="Name" className="border border-gray-300 rounded-md p-2" />
                 <input ref={passwordRef} placeholder="Password" className="border border-gray-300 rounded-md p-2" />
-                <button onClick={signin} className="bg-purple-600 text-white rounded-md p-2 cursor-pointer hover:bg-purple-700" >Signin</button>
+                <div className="flex space-x-4">
+                    <button onClick={signin} className="bg-purple-600 text-white rounded-md p-2 cursor-pointer hover:bg-purple-700" >Signin</button>
+                    <button onClick={() => { navigate("/signup") }} className="bg-purple-600 text-white rounded-md p-2 cursor-pointer hover:bg-purple-700" >Signup</button>
+                </div>
             </div>
+
         </div>
     )
 }
