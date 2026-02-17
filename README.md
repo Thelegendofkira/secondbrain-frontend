@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+🧠 Second Brain (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my Second Brain! This is the frontend application for a personal knowledge management system designed to aggregate and organize digital content.
 
-Currently, two official plugins are available:
+I built this because I constantly found myself losing track of useful YouTube videos, Twitter threads, and articles. This app lets you store those links in one place, tag them, and even share your entire "brain" with the world via a public link.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live Demo](https://secondbrain-frontend-4c8z.vercel.app/)
 
-## React Compiler
+## Features
+Authentication: Secure Signup and Login (JWT based).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Add Content: Easily save links (YouTube, Twitter) with a title and custom tags.
 
-## Expanding the ESLint configuration
+Smart Cards: Automatically detects the content type (YouTube/Twitter) and displays it in a clean card format.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Filtering: Sidebar navigation to quickly filter content by type (Tweets, Videos, Documents).
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Share Your Brain: One-click sharing generates a unique public link so others can view your curated list (read-only mode).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Responsive UI: Built with Tailwind CSS for a clean look on different screen sizes.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🛠️ Tech Stack
+Framework: React (Vite)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Language: TypeScript
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Styling: Tailwind CSS
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+State/Hooks: Custom hooks (useContent) for data fetching.
+
+HTTP Client: Axios (with interceptors for auth headers).
+
+Icons: Heroicons / Custom SVG icons.
+
+Notifications: react-hot-toast for smooth alerts.
+
+
